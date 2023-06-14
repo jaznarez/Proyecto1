@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import Template, Context, loader
 from datetime import datetime
+from django.shortcuts import render 
 
 def saludo(request):
     return HttpResponse("Hola Django-Coder")

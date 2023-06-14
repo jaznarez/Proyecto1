@@ -15,16 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-#from Proyecto1.view import probandoTemplate
-from Proyecto1.view import saludo, segunda_vista, diaDeHoy
+from django.urls import path, include
+from Proyecto1.view import probandoTemplate
+from Proyecto1.view import saludo, segunda_vista, diaDeHoy, probandoTemplate
 
 
 urlpatterns = [
+    path(" ", saludo),
     path("admin/", admin.site.urls),
-    path("saludo/", saludo),
+    path("saludo/", saludo), #http://127.0.0.1:8000/profesores/ esta es la ruta de acceso master al proyecto, para entrar al saludo de AppCoder sería:http://127.0.0.1:8000/AppCoder/profesores/ 
     path("segundavista/", segunda_vista),
     path("diadehoy/", diaDeHoy),
-    #path("probandotemplate/", probandoTemplate),
-    
+    path("probandotemplate/", probandoTemplate),
+    path("AppCoder/", include("AppCoder.urls")), #esto es para relacionar las dos url, las de proyecto 1 directo, y las de AppCoder
 ]
