@@ -12,12 +12,11 @@ def cursos(request):
                                                   #En proyecto 1, la parte pricipal, usamos otra forma de relacionarlos que es la Dir url, en settings, pero se recomienda usar render.
 
 def profesores(request):
-    return ("Vista profesores")
+    return render(request, "AppCoder/profesores.htm")
 
-def estudiante(request):
-    return("Vista estudiantes")
+def estudiantes(request):
+    return render(request, "AppCoder/estudiantes.html")
 
 def entregables(request):
-    return("Vista Entregables")
-
+    return render(request, "AppCoder/entregables.htm")
 
